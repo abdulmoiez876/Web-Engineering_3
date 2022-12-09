@@ -1,6 +1,18 @@
 <?php
-if(isset($_POST['signup'])) {
-    
+include './config.php';
+$message = 'Welcome!';
+if (isset($_POST['signup'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    try {
+        $queryExec = mysqli_query($connection, $query);
+        $message = "User Created successfully!";
+    }
+    catch(Exception $e) {
+        $message = "User could not be created!";
+    }
 }
 ?>
 
@@ -25,17 +37,18 @@ if(isset($_POST['signup'])) {
 </head>
 
 <body>
-    <h5 class="message">message</h5>
+    <h5 class='message'><?php echo $message?></h5>
+
 
     <form action="./login.php" method="POST">
         <div class="mb-3">
             <label for="username" class="form-label">User Name</label>
-            <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username">
             <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" class="form-control" id="password" name="password">
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="rememberMe">
