@@ -29,6 +29,7 @@ if(isset($_POST['login'])) {
         }
         else {
             $message = "User Logged In!";
+            header("Location: index.html");
         }
     }
     catch(Exception $e) {
