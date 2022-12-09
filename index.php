@@ -233,24 +233,50 @@ include './config.php';
       <hr class="featurette-divider" />
 
       <div class="row featurette">
+
+      <?php
+      $queryFeaturette = "SELECT * FROM featurette";
+      $execFeaturette = mysqli_query($connection, $queryFeaturette);
+
+      while($resultFeaturette = mysqli_fetch_assoc($execFeaturette)) {
+      ?>
         <div class="col-md-7">
-          <p class="lead fw-medium">October 27, 2022</p>
+          <p class="lead fw-medium"><?php echo "$resultFeaturette[date]"?></p>
           <h2 class="featurette-heading fw-bold lh-1 text-light">
-            Will The Netherlands still Exist in 100 Years?
+          <?php echo "$resultFeaturette[title]"?>
           </h2>
           <p class="lead text-light">
-            The Netherlands is the world’s second-largest producer of
-            greenhouse gases. The country also has an unfortunate propensity
-            for natural flooding and is therefore highly susceptible to rising
-            sea levels and other consequences of climate change.
+          <?php echo "$resultFeaturette[description]"?>
           </p>
           <button type="button" class="btn btn-outline-light p-2">
             Read More
           </button>
         </div>
         <div class="col-md-5">
-          <img src="imgs/content4.png" width="100%" />
+          <img src="<?php echo "$resultFeaturette[img]"?>" width="100%" />
         </div>
+
+        <hr>
+      <?php
+      }
+      ?>
+
+
+        <!-- <div class="col-md-7">
+          <p class="lead fw-medium">August 27, 2022</p>
+          <h2 class="featurette-heading fw-bold lh-1 text-light">
+          Analytics company RELX
+          </h2>
+          <p class="lead text-light">
+          Increasingly, brands are also investing in producing their own high-quality feature stories. One example comes from analytics company RELX, who published a powerful overview of the purpose behind their
+          </p>
+          <button type="button" class="btn btn-outline-light p-2">
+            Read More
+          </button>
+        </div>
+        <div class="col-md-5">
+          <img src="imgs/content5.jpeg" width="100%" />
+        </div> -->
       </div>
 
       <hr class="featurette-divider" />
