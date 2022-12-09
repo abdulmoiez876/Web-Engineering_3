@@ -149,32 +149,32 @@ include './config.php';
         }
         ?>
 
-        <!-- 
-                  <div class="carousel-item">
-                    <img src="imgs/2.jpg" width="100%" height="100%" />
-                    <div class="container">
-                      <div class="carousel-caption text-start">
-                        <h1>North Korea on the Move</h1>
-                        <p>October 6, 2022</p>
-                        <p>
-                          <a class="btn btn-lg btn-light" href="#">Read More</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="carousel-item">
-                    <img src="imgs/3.jpg" width="100%" height="100%" />
-                    <div class="container">
-                      <div class="carousel-caption text-start">
-                        <h1>The West could Annihilate Russia’s Troops</h1>
-                        <p>October 13, 2022</p>
-                        <p>
-                          <a class="btn btn-lg btn-light" href="#">Read More</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div> -->
+
+        <!-- <div class="carousel-item">
+          <img src="imgs/2.jpg" width="100%" height="100%" />
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>North Korea on the Move</h1>
+              <p>October 6, 2022</p>
+              <p>
+                <a class="btn btn-lg btn-light" href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="imgs/3.jpg" width="100%" height="100%" />
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>The West could Annihilate Russia’s Troops</h1>
+              <p>October 13, 2022</p>
+              <p>
+                <a class="btn btn-lg btn-light" href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
 
 
       </div>
@@ -195,27 +195,36 @@ include './config.php';
     <div class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
+        <?php
+        $queryMarketing = "SELECT * FROM marketing";
+        $execMarketing = mysqli_query($connection, $queryMarketing);
+
+        while($resultMarketing = mysqli_fetch_assoc($execMarketing)) {
+        ?>
         <div class="col-lg-4">
-          <img src="imgs/content1.jpg" width="90%" /><br /><br />
-          <p>Netflix is Growing-Up</p>
-          <br />
+          <img src=<?php echo "$resultMarketing[img]"?> width="90%" /><br /><br />
+          <p><?php echo "$resultMarketing[description]"?></p>
           <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
         </div>
-        <!-- /.col-lg-4 -->
+        <?php
+        }
+        ?>
+
+        <!-- /.col-lg-4
 
         <div class="col-lg-4">
           <img src="imgs/content2.jpeg" width="90%" /><br /><br />
           <p>It’s a me, Chris Pratt!</p>
           <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
         </div>
-        <!-- /.col-lg-4 -->
+        /.col-lg-4
 
         <div class="col-lg-4">
           <img src="imgs/content3.png" width="90%" /><br /><br />
           <p>A Booming Birthday Gift for Putin</p>
           <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
         </div>
-        <!-- /.col-lg-4 -->
+        /.col-lg-4 -->
       </div>
       <!-- /.row -->
 
