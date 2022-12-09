@@ -199,32 +199,16 @@ include './config.php';
         $queryMarketing = "SELECT * FROM marketing";
         $execMarketing = mysqli_query($connection, $queryMarketing);
 
-        while($resultMarketing = mysqli_fetch_assoc($execMarketing)) {
+        while ($resultMarketing = mysqli_fetch_assoc($execMarketing)) {
         ?>
-        <div class="col-lg-4">
-          <img src=<?php echo "$resultMarketing[img]"?> width="90%" /><br /><br />
-          <p><?php echo "$resultMarketing[description]"?></p>
-          <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
-        </div>
+          <div class="col-lg-4">
+            <img src=<?php echo "$resultMarketing[img]" ?> width="90%" /><br /><br />
+            <p><?php echo "$resultMarketing[description]" ?></p>
+            <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
+          </div>
         <?php
         }
         ?>
-
-        <!-- /.col-lg-4
-
-        <div class="col-lg-4">
-          <img src="imgs/content2.jpeg" width="90%" /><br /><br />
-          <p>It’s a me, Chris Pratt!</p>
-          <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
-        </div>
-        /.col-lg-4
-
-        <div class="col-lg-4">
-          <img src="imgs/content3.png" width="90%" /><br /><br />
-          <p>A Booming Birthday Gift for Putin</p>
-          <p><a class="btn btn-secondary" href="#">READ NOW</a></p>
-        </div>
-        /.col-lg-4 -->
       </div>
       <!-- /.row -->
 
@@ -234,78 +218,67 @@ include './config.php';
 
       <div class="row featurette">
 
-      <?php
-      $queryFeaturette = "SELECT * FROM featurette";
-      $execFeaturette = mysqli_query($connection, $queryFeaturette);
+        <?php
+        $queryFeaturette = "SELECT * FROM featurette";
+        $execFeaturette = mysqli_query($connection, $queryFeaturette);
 
-      while($resultFeaturette = mysqli_fetch_assoc($execFeaturette)) {
-      ?>
-        <div class="col-md-7">
-          <p class="lead fw-medium"><?php echo "$resultFeaturette[date]"?></p>
-          <h2 class="featurette-heading fw-bold lh-1 text-light">
-          <?php echo "$resultFeaturette[title]"?>
-          </h2>
-          <p class="lead text-light">
-          <?php echo "$resultFeaturette[description]"?>
-          </p>
-          <button type="button" class="btn btn-outline-light p-2">
-            Read More
-          </button>
-        </div>
-        <div class="col-md-5">
-          <img src="<?php echo "$resultFeaturette[img]"?>" width="100%" />
-        </div>
+        while ($resultFeaturette = mysqli_fetch_assoc($execFeaturette)) {
+        ?>
+          <div class="col-md-7">
+            <p class="lead fw-medium"><?php echo "$resultFeaturette[date]" ?></p>
+            <h2 class="featurette-heading fw-bold lh-1 text-light">
+              <?php echo "$resultFeaturette[title]" ?>
+            </h2>
+            <p class="lead text-light">
+              <?php echo "$resultFeaturette[description]" ?>
+            </p>
+            <button type="button" class="btn btn-outline-light p-2">
+              Read More
+            </button>
+          </div>
+          <div class="col-md-5">
+            <img src="<?php echo "$resultFeaturette[img]" ?>" width="100%" />
+          </div>
 
-        <hr>
-      <?php
-      }
-      ?>
-
-
-        <!-- <div class="col-md-7">
-          <p class="lead fw-medium">August 27, 2022</p>
-          <h2 class="featurette-heading fw-bold lh-1 text-light">
-          Analytics company RELX
-          </h2>
-          <p class="lead text-light">
-          Increasingly, brands are also investing in producing their own high-quality feature stories. One example comes from analytics company RELX, who published a powerful overview of the purpose behind their
-          </p>
-          <button type="button" class="btn btn-outline-light p-2">
-            Read More
-          </button>
-        </div>
-        <div class="col-md-5">
-          <img src="imgs/content5.jpeg" width="100%" />
-        </div> -->
+          <hr>
+        <?php
+        }
+        ?>
       </div>
 
       <hr class="featurette-divider" />
 
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-bold lh-1 text-light">
-            Hey there, I'm Carlo!
-          </h2>
-          <br />
-          <p class="lead text-light">
-            I love writing about what’s happening across the globe and giving
-            my take on<br />it. I often talk with others about what’s
-            happening, which turns into long<br />talks… exciting talks.<br />
-            <br />I’ve always wanted to write blog articles, but I never
-            really went for it until<br />now. I mainly write my opinions
-            about global news, but I also like to write<br />about Tech! My
-            writing style is primarily conversational, making it easy to<br />follow.
-          </p>
-          <br />
-          <p>
-            <button type="button" class="btn btn-outline-light p-2">
-              About Me
-            </button>
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img src="imgs/aboutme.jpg" width="90%" height="90%" />
-        </div>
+
+        <?php
+        $queryAboutUs = "SELECT * FROM aboutUs";
+        $execAboutUs = mysqli_query($connection, $queryAboutUs);
+
+        while ($resultAboutUs = mysqli_fetch_assoc($execAboutUs)) {
+        ?>
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-bold lh-1 text-light">
+              <?php echo $resultAboutUs['intro']?>
+            </h2>
+            <br />
+            <p class="lead text-light">
+              <?php echo $resultAboutUs['detail']?>
+            </p>
+            <br />
+            <p>
+              <button type="button" class="btn btn-outline-light p-2">
+                About Me
+              </button>
+            </p>
+          </div>
+          <div class="col-md-5">
+            <img src="<?php echo $resultAboutUs['img']?>" width="90%" height="90%" />
+          </div>
+
+        <?php
+
+        }
+        ?>
       </div>
 
       <hr class="featurette-divider" />
