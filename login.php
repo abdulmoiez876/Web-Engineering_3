@@ -4,7 +4,7 @@ $message = 'Welcome!';
 if (isset($_POST['signup'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
+    
     $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     try {
         $queryExec = mysqli_query($connection, $query);
@@ -12,6 +12,27 @@ if (isset($_POST['signup'])) {
     }
     catch(Exception $e) {
         $message = "User could not be created!";
+    }
+}
+
+if(isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+
+    try {
+        $queryExec = mysqli_query($connection, $query);
+        $queryResult = mysqli_fetch_assoc($queryExec);
+        if(!$queryResult) {
+            $message = "User does not exist!";
+        }
+        else {
+            $message = "User Logged In!";
+        }
+    }
+    catch(Exception $e) {
+        $message = "Could not log In!";
     }
 }
 ?>
