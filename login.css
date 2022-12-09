@@ -1,0 +1,16 @@
+form {
+    margin: 100px 200px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1%;
+}
+
+.message {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    margin-top: -70px;
+    margin-left: 340px;
+    background-color: rgb(144, 182, 231);
+}
