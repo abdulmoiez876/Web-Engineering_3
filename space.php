@@ -19,31 +19,38 @@ include './config.php';
   <link href="bootstrap.min.css" rel="stylesheet" />
 
   <style>
-    body{
-        background-color:black;
-        font-family:Helvetica,Arial,sans-serif;
+    body {
+      background-color: black;
+      font-family: Helvetica, Arial, sans-serif;
     }
-    .login-btn{
-      margin-right:30px;
+
+    .login-btn {
+      margin-right: 30px;
     }
-    .c-btn{
-      color:white;
+
+    .c-btn {
+      color: white;
     }
+
     .oc-cat {
-        gap:3%;
-        margin-top:5%;
+      gap: 3%;
+      margin-top: 5%;
     }
-    .c1{
-        margin-left:3%;
+
+    .c1 {
+      margin-left: 3%;
     }
-    .c-heading{
-        margin-top:10%;
+
+    .c-heading {
+      margin-top: 10%;
     }
-    .btn-read{
-        width:50%;
+
+    .btn-read {
+      width: 50%;
     }
-    .read-more{
-        font-size:90%;
+
+    .read-more {
+      font-size: 90%;
     }
   </style>
 
@@ -60,16 +67,16 @@ include './config.php';
               <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
             </li>
             <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-secondary c-btn dropdown-toggle text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categories
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./global.php">Global</a></li>
-                <li><a class="dropdown-item" href="./movies.php">Movies Video TV</a></li>
-                <li><a class="dropdown-item text-secondary" href="./space.php">Space</a></li>
-              </ul>
-            </div>
+              <div class="dropdown">
+                <button class="btn btn-outline-secondary c-btn dropdown-toggle text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categories
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./global.php">Global</a></li>
+                  <li><a class="dropdown-item" href="./movies.php">Movies Video TV</a></li>
+                  <li><a class="dropdown-item text-secondary" href="./space.php">Space</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-light" href="world.php">World NEWS</a>
@@ -89,27 +96,41 @@ include './config.php';
       </div>
     </nav>
   </header>
+
   <main>
     <div class="c-heading text-center">
-        <h2 style="color: white; font-weight:bold">Space</h2>
+      <h2 style="color: white; font-weight:bold">Space</h2>
     </div>
+
     <div class="row pt-4 g-0 oc-cat">
+
+      <?php
+      $spaceQuery = "SELECT * FROM space";
+      $spaceExec = mysqli_query($connection, $spaceQuery);
+      while ($spaceResult = mysqli_fetch_assoc($spaceExec)) {
+      ?>
         <div class="card col-md-2 c1">
-            <img src="./imgs/1.jpg" class="card-img-top" alt="space-img" >
-            <div class="card-body">
-                <span>October 17, 2022</span>
-                <p class="text-dark"><b>NASA is Hitting Asteroids</b></p>
-                <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
-            </div>
+          <img src="<?php echo $spaceResult['img']?>" class="card-img-top" alt="space-img">
+          <div class="card-body">
+            <span><?php echo $spaceResult['date']?></span>
+            <p class="text-dark"><b><?php echo $spaceResult['title']?></b></p>
+            <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
+          </div>
         </div>
-        <div class="card col-md-2">
-            <img src="./imgs/2.jpg" class="card-img-top" alt="space-img" >
-            <div class="card-body">
-                <span>October 06, 2022</span>
-                <p class="text-dark"><b>North Korea on the Move</b></p>
-                <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
-            </div>
+      <?php
+      }
+      ?>
+
+
+      <!-- <div class="card col-md-2">
+        <img src="./imgs/2.jpg" class="card-img-top" alt="space-img">
+        <div class="card-body">
+          <span>October 06, 2022</span>
+          <p class="text-dark"><b>North Korea on the Move</b></p>
+          <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
         </div>
+      </div> -->
+
     </div>
   </main>
 

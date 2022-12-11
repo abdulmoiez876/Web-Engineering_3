@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 01:25 PM
+-- Generation Time: Dec 11, 2022 at 07:14 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -88,6 +88,30 @@ INSERT INTO `featurette` (`id`, `date`, `title`, `description`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `globals`
+--
+
+CREATE TABLE `globals` (
+  `id` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `title` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `globals`
+--
+
+INSERT INTO `globals` (`id`, `img`, `date`, `title`) VALUES
+(1, './imgs/gc.png', 'October 27, 2022', 'Will The Netherlands still Exist in 100 Years?'),
+(2, './imgs/3.jpg', 'October 13, 2022', 'The West could Annihilate Russia’s Troops'),
+(3, './imgs/content3.png', 'October 10, 2022', 'A Booming Birthday Gift for Putin'),
+(4, './imgs/1.jpg', 'October 17, 2022', 'NASA is Hitting Asteroids to Protect Our Planet'),
+(5, './imgs/2.jpg', 'October 06, 2022', 'North Korea on the Move, again');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `maincarousel`
 --
 
@@ -131,6 +155,48 @@ INSERT INTO `marketing` (`id`, `img`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `movies`
+--
+
+CREATE TABLE `movies` (
+  `id` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `title` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `movies`
+--
+
+INSERT INTO `movies` (`id`, `img`, `date`, `title`) VALUES
+(1, './imgs/content1.jpg', 'October 12, 2022', 'Netflix is Growing-Up'),
+(2, './imgs/content2.jpeg', 'October 8, 2022', 'It’s a me, Chris Pratt!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `space`
+--
+
+CREATE TABLE `space` (
+  `id` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `title` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `space`
+--
+
+INSERT INTO `space` (`id`, `img`, `date`, `title`) VALUES
+(1, './imgs/1.jpg', 'October 17, 2022', 'NASA is Hitting Asteroids'),
+(2, './imgs/2.jpg', 'October 06, 2022', 'North Korea on the Move');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -170,6 +236,12 @@ ALTER TABLE `featurette`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `globals`
+--
+ALTER TABLE `globals`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `maincarousel`
 --
 ALTER TABLE `maincarousel`
@@ -179,6 +251,18 @@ ALTER TABLE `maincarousel`
 -- Indexes for table `marketing`
 --
 ALTER TABLE `marketing`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `movies`
+--
+ALTER TABLE `movies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `space`
+--
+ALTER TABLE `space`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -211,6 +295,12 @@ ALTER TABLE `featurette`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `globals`
+--
+ALTER TABLE `globals`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `maincarousel`
 --
 ALTER TABLE `maincarousel`
@@ -221,6 +311,18 @@ ALTER TABLE `maincarousel`
 --
 ALTER TABLE `marketing`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `movies`
+--
+ALTER TABLE `movies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `space`
+--
+ALTER TABLE `space`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
