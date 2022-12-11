@@ -1,0 +1,37 @@
+body {
+  background-color: #eff2f7;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.card {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  width: 40%;
+  margin: auto;
+}
+.card-img-top {
+  width: 30%;
+}
+.title {
+  font-weight: bold;
+  color: #19356b;
+}
+span {
+  font-size: 80%;
+}
+.btn {
+  width: 25%;
+  background-color: #19356b;
+  color: white;
+}
+.btn:hover {
+  background-color: #172e5c;
+  color: white;
+}
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}

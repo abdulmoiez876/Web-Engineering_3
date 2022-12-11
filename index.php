@@ -79,6 +79,12 @@ include './config.php';
       text-decoration: none;
       color: white;
     }
+    .login-btn{
+      margin-right:30px;
+    }
+    .c-btn{
+      color:white;
+    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -89,14 +95,23 @@ include './config.php';
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="imgs/logo.png" /></a>
+        <a class="navbar-brand" href="./index.php"><img src="imgs/logo.png" /></a>
         <div class="collapse navbar-collapse text-dark" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+              <a class="nav-link active text-secondary" aria-current="page" href="./index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" href="#">All Stories</a>
+            <div class="dropdown">
+              <button class="btn btn-outline-secondary c-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./global.php">Global</a></li>
+                <li><a class="dropdown-item" href="./movies.php">Movies Video TV</a></li>
+                <li><a class="dropdown-item" href="./space.php">Space</a></li>
+              </ul>
+            </div>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-light" href="#">World NEWS</a>
@@ -104,19 +119,14 @@ include './config.php';
             <li class="nav-item">
               <a class="nav-link active text-light" href="./contactUs.php">Contact Us</a>
             </li>
-            <li class="nav-item"></li>
-          </ul>
-          <ul class="me-auto mb-md-0 justify-content-end nav">
             <li class="nav-item">
-              <div class="vr bg-light mt-2 align-middle"></div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" href="#">Receive Monthly Blog NEWS Letter</a>
+              <a class="vr bg-light mx-4 mt-3"></a>
             </li>
             <li>
-              <a href="./login.php" class="btn btn-primary">Login</a>
+              <a class="nav-link active text-light" href="./newsletter.php">Receive Monthly Blog NEWS Letter</a>
             </li>
           </ul>
+          <a href="./login.php" class="btn btn-outline-light login-btn">Login</a>
         </div>
       </div>
     </nav>
