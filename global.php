@@ -33,12 +33,13 @@ include './config.php';
     }
 
     .oc-cat {
-      gap: 3%;
+      gap: 4%;
       margin-top: 5%;
     }
 
     .c1 {
-      margin-left: 2.5%;
+      margin-left: 4%;
+      margin-bottom:4%;
     }
 
     .c-heading {
@@ -121,42 +122,6 @@ include './config.php';
       <?php
       }
       ?>
-
-      <!-- <div class="card col-md-2">
-        <img src="./imgs/3.jpg" class="card-img-top" alt="movies-img">
-        <div class="card-body">
-          <span>October 13, 2022</span>
-          <p class="text-dark"><b>The West could Annihilate Russia’s Troops</b></p>
-          <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
-        </div>
-      </div>
-
-      <div class="card col-md-2">
-        <img src="./imgs/content3.png" class="card-img-top" alt="movies-img">
-        <div class="card-body">
-          <span>October 10, 2022</span>
-          <p class="text-dark"><b>A Booming Birthday Gift for Putin</b></p>
-          <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
-        </div>
-      </div>
-
-      <div class="card col-md-2">
-        <img src="./imgs/1.jpg" class="card-img-top" alt="space-img">
-        <div class="card-body">
-          <span>October 17, 2022</span>
-          <p class="text-dark"><b>NASA is Hitting Asteroids to Protect Our Planet</b></p>
-          <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
-        </div>
-      </div>
-
-      <div class="card col-md-2">
-        <img src="./imgs/2.jpg" class="card-img-top" alt="space-img">
-        <div class="card-body">
-          <span>October 06, 2022</span>
-          <p class="text-dark"><b>North Korea on the Move, again</b></p>
-          <span><a class="btn btn-read btn-dark" href="#"><small class="read-more">Read More</small></a></span>
-        </div>
-      </div> -->
     </div>
   </main>
 
