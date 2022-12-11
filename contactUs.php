@@ -31,128 +31,83 @@ if (isset($_POST['send'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/" />
-
+    <link rel="stylesheet" href="./contactUs.css">
     <link href="bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./.css">
-
-    <style>
-        form {
-
-            padding: 40px 80px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            border-radius: 1%;
-        }
-
-        .message {
-            width: 50%;
-            text-align: center;
-            padding: 10px;
-            position: absolute;
-            margin-top: -10px;
-            margin-left: 340px;
-            background-color: rgb(144, 182, 231);
-        }
-    </style>
 </head>
 
-<body>
+<body class="body">
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="imgs/logo.png" /></a>
-                <div class="collapse navbar-collapse text-dark" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" href="#">All Stories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" href="#">World NEWS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" href="./contactUs.php">Contact Us</a>
-                        </li>
-                        <li class="nav-item"></li>
-                    </ul>
-                    <ul class="me-auto mb-md-0 justify-content-end nav">
-                        <li class="nav-item">
-                            <div class="vr bg-light mt-2 align-middle"></div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" href="#">Receive Monthly Blog NEWS Letter</a>
-                        </li>
-                        <li>
-                            <a href="./login.php" class="btn btn-primary">Login</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.php"><img src="imgs/logo.png" /></a>
+        <div class="collapse navbar-collapse text-dark" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
+            </li>
+            <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./global.php">Global</a></li>
+                <li><a class="dropdown-item" href="./movies.php">Movies Video TV</a></li>
+                <li><a class="dropdown-item" href="./space.php">Space</a></li>
+              </ul>
             </div>
-        </nav>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" href="./world.php">World NEWS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary" href="./contactUs.php">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="vr bg-light mx-4 mt-3"></a>
+            </li>
+            <li>
+              <a class="nav-link active text-light" href="./newsletter.php">Receive Monthly Blog NEWS Letter</a>
+            </li>
+          </ul>
+          <a href="./login.php" class="btn btn-outline-light login-btn">Login</a>
+        </div>
+      </div>
+    </nav>
     </header>
 
-    <h5 class='message'><?php echo $message ?></h5>
+    <!-- <h5 class='message'><?php echo $message ?></h5> -->
 
     <!--Section: Contact v.2-->
-    <section style="margin-top: 100px;" class="mb-4">
+    <section style="margin-top: 100px;" class=" card mb-4">
         <!-- <div class="container"> -->
-
-        <div class="row" style="padding: 50px;">
+        <div><h3 class="text-center my-4" style="font-weight:bold;font-family:Helvetica;">Contact Us</h3></div>
+        <div class="row" style="padding-left: 50px; padding-right:50px;">
             <form id="contact-form" name="contact-form" action="./contactUs.php" method="POST">
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <label for="name" class="">Your name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
+                <div>
+                  <div >
+                      <label for="name" class="">Your name</label>
+                      <input type="text" id="name" name="name" class="form-control" required>
+                  </div>
+                  <div class="mt-3">
                             <label for="email" class="">Your email</label>
                             <input type="text" id="email" name="email" class="form-control" required>
-                        </div>
-                    </div>
-                    <!--Grid column-->
+                  </div>
 
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
+                  <div class="mt-3">
                             <label for="subject" class="">Subject</label>
                             <input type="text" id="subject" name="subject" class="form-control">
                         </div>
-                    </div>
-                </div>
-                <!--Grid row-->
 
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-
-                        <div class="md-form">
+                        <div class="mt-3">
                             <label for="message">Your message</label>
                             <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
                         </div>
 
-                    </div>
                 </div>
-                <!--Grid row-->
 
-                <div class="text-center text-md-left">
-                    <button class="btn btn-primary" type="submit" name='send'>Send</button>
+                <div class="text-center mt-4 text-md-left mb-4">
+                    <button class="btn btn-outline-secondary" type="submit" name='send'>Submit</button>
                 </div>
             </form>
             <!-- </div> -->

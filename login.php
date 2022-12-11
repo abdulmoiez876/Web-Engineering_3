@@ -46,39 +46,34 @@ if(isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
+    <link href="bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./login.css">
 
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
-    <h5 class='message'><?php echo $message?></h5>
-
-
-    <form action="./login.php" method="POST">
+    <form action="./login.php" method="POST" class="card mt-4">
+        <div class="text-center mb-3"><img class="card-img-top" src="./imgs/newsletter-logo.png"/></div>
         <div class="mb-3">
-            <label for="username" class="form-label">User Name</label>
+            <label for="username" class="form-label"><b>User Name</b></label>
             <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username">
-            <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+            <span id="emailHelp" class="form-text text-secondary">We'll never share your username with anyone else.</span>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
+            <label for="password" class="form-label"><b>Password</b></label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="rememberMe">
             <label class="form-check-label" for="rememberMe">Remember me</label>
         </div>
-        <button type="submit" name="login" class="btn btn-primary">Login</button>
-        <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
+        <div>
+        <button type="submit" name="login" class="btn my-4">Login</button>
+        <button type="submit" name="signup" class="btn my-4">Sign Up</button>
+        </div>
+        
     </form>
+    <script src="bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
