@@ -102,7 +102,7 @@ include './config.php';
               <a class="nav-link active text-light" href="#">World NEWS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" href="#">About ME</a>
+              <a class="nav-link active text-light" href="./contactUs.php">Contact Us</a>
             </li>
             <li class="nav-item"></li>
           </ul>
@@ -148,33 +148,6 @@ include './config.php';
         <?php
         }
         ?>
-
-
-        <!-- <div class="carousel-item">
-          <img src="imgs/2.jpg" width="100%" height="100%" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>North Korea on the Move</h1>
-              <p>October 6, 2022</p>
-              <p>
-                <a class="btn btn-lg btn-light" href="#">Read More</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="imgs/3.jpg" width="100%" height="100%" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>The West could Annihilate Russia’s Troops</h1>
-              <p>October 13, 2022</p>
-              <p>
-                <a class="btn btn-lg btn-light" href="#">Read More</a>
-              </p>
-            </div>
-          </div>
-        </div> -->
 
 
       </div>
